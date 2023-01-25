@@ -1,0 +1,74 @@
+<header class="py-3 border-bottom">
+  <div class="container d-flex flex-wrap justify-content-center">
+    <a href="/" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
+      <nav class="d-flex">
+        <h6 class="mb-0">
+          <a href="" class="text-reset">Home</a>
+        </h6>
+      </nav>
+    </a>
+    <app-search></app-search>
+  </div>
+</header>
+
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="../assets/img/pexels-vishnu-r-nair-1105666.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="../assets/img/disco-concierto-de-rock-multitud-fondo-de-pantalla.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="../assets/img/3456x2304_px_bands_Concerts_dave_groups_guitars_hard_heavy-1678921.jpg!d" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<div class="py-5 text-center">
+  <img class="d-block mx-auto mb-2" src="../assets/img/2.png" alt="" width="100" height="100">
+  <h2>Bandas mas escuchadas</h2>  
+</div>
+
+<div class="container marketing" >
+  <!-- Three columns of text below the carousel -->
+  <div class="row" style="text-align: center;">
+
+    <div class="col-lg-4 mb-5" *ngFor="let band of Bands; let iControl=index">
+      <img class="bd-placeholder-img rounded-circle" width="150" height="150" src="../assets/img/bands/{{ band.img }}">
+      <h2>{{ band.name }}</h2>
+      <p>{{ band.gender }}</p>
+      <button mat-stroked-button color="primary" href="band">
+        <a href="band/{{ band.id }}" style="text-decoration: none;">Ver Mas</a>
+        
+      </button>      
+    </div><!-- /.col-lg-4 -->    
+
+
+  </div><!-- /.row -->    
+</div>

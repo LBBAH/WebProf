@@ -1,0 +1,16 @@
+<form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Buscar Banda</mat-label>
+      <input type="text"
+             placeholder="Por nombre"
+             aria-label="Buscar Banda"
+             matInput
+             [formControl]="myControl"
+             [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete" (optionSelected)="SelectBand($event.option.value)">
+        <mat-option *ngFor="let option of FinalData | async" [value]="option.name">
+          <a href="band/{{ option.id }}" style="text-decoration: none ">{{ option.name }}</a>
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>

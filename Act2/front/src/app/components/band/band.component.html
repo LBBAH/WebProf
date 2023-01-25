@@ -1,0 +1,52 @@
+<header class="py-3 border-bottom">
+    <div class="container d-flex flex-wrap justify-content-center">
+      <a href="/" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
+        <nav class="d-flex">
+          <h6 class="mb-0">
+            <a href="" class="text-reset">Home</a>
+            <span>/</span>
+            <a href="" class="text-reset">{{ Bands.name }}</a>           
+          </h6>
+        </nav>
+      </a>
+      <app-search></app-search>
+    </div>
+</header>
+
+<div class="container px-4 py-5" id="custom-cards">
+    <h2 class="pb-2 border-bottom">{{ Bands.gender }}</h2>
+
+    <div class="row row-cols-2 row-cols-lg-2 align-items-stretch g-4 py-5">
+        <div class="col">            
+            <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('../assets/img/bands2/{{ Bands.img2 }}'); background-size: 100% auto;">
+                <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                    <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">{{ Bands.name }}</h3>
+                    <ul class="d-flex list-unstyled mt-auto">
+                    <li class="me-auto">
+                        <a href="{{ Bands.linkSpotify }}">
+                            <img src="../assets/img/spotify_logo.webp" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                        </a>                        
+                    </li>
+                    <li class="d-flex align-items-center me-3">
+                        <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#geo-fill"></use></svg>
+                        <small>Reproducciones</small>
+                    </li>
+                    <li class="d-flex align-items-center">
+                        <svg class="bi me-2" width="1em" height="1em"><use xlink:href="#calendar3"></use></svg>
+                        <small>{{ Bands.heard }}</small>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </div>  
+        <div class="col d-flex align-items-start">
+            <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+                <svg class="bi" width="1em" height="1em"><use xlink:href="#toggles2"></use></svg>
+                </div>
+            <div>
+                <h3 class="fs-2">Informacion de la banda</h3>
+                <p>{{ Bands.description }}</p>               
+            </div>
+        </div>            
+    </div> 
+</div>

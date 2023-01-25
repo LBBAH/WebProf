@@ -1,0 +1,46 @@
+<header class="py-3 border-bottom">
+  <div class="container d-flex flex-wrap justify-content-center">
+    <a href="/" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
+      <nav class="d-flex">
+        <h6 class="mb-0">
+          <a href="" class="text-reset">Home</a>
+          <span>/</span>
+          <a href="" class="text-reset">Login</a>           
+        </h6>
+      </nav>
+    </a>
+    <app-search></app-search>
+  </div>
+</header>
+
+<div class="form-signin w-100 m-auto" style="padding: 25%; padding-top: 5px; padding-bottom: 5px;">
+    <form [formGroup]="formlogin" (ngSubmit)="loginUser()">
+      <img class="mb-4" src="../assets/img/2.png" alt="" width="100" height="auto">
+      <h1 class="h3 mb-3 fw-normal">Inicia Sesión</h1>
+  
+      <div class="form-floating">
+        <input type="text" class="form-control" formControlName="email" placeholder="Email">
+        <label for="floatingInput">Email address</label>
+      </div>
+      <div *ngIf="email?.invalid && (email?.dirty || email?.touched )" class="alert alert-danger">
+        <div *ngIf="email?.errors?.['required']">Campo requerido</div>
+        <div *ngIf="email?.errors?.['pattern']">Error sitaxis</div>
+      </div>
+
+      <div class="form-floating">
+        <input type="password" class="form-control" formControlName="password" placeholder="Password">
+        <label for="floatingPassword">Password</label>
+      </div>
+      <div *ngIf="password?.invalid && (password?.dirty || password?.touched )" class="alert alert-danger">
+        <div *ngIf="password?.errors?.['required']">Campo requerido</div>                    
+      </div>
+  
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+      <p class="mt-5 mb-3 text-muted">© 2017–2022</p>
+    </form>
+</div>
